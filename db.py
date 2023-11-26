@@ -53,13 +53,13 @@ tableCreateQuery = {
 type dictionary
 '''
 tableImportQuery = {
-    'user' : '''INSERT INTO User(uID, userID, userPW, userName, userBirth, userPhone, userSex, userAddress) 
+    'user' : '''INSERT OR REPLACE INTO User(uID, userID, userPW, userName, userBirth, userPhone, userSex, userAddress) 
 	VALUES(?, ?, ?, ?, ?, ?, ?, ?)''', 
-    'ground' : '''INSERT INTO Ground(gID, groundName, groundAddress, groundPhone, sID) 
+    'ground' : '''INSERT OR REPLACE INTO Ground(gID, groundName, groundAddress, groundPhone, sID) 
 	VALUES(?, ?, ?, ?, ?)''', 
-    'sport' : '''INSERT INTO Sport(sID, sportName) 
+    'sport' : '''INSERT OR REPLACE INTO Sport(sID, sportName) 
 	VALUES(?, ?)''', 
-    'post' : '''INSERT INTO Post(pID, postTitle, postSubTitle, postDesc, postTag, postView, postDate, postEndDate, postGetCount, sID, uID) 
+    'post' : '''INSERT OR REPLACE INTO Post(pID, postTitle, postSubTitle, postDesc, postTag, postView, postDate, postEndDate, postGetCount, sID, uID) 
     VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
 }
 
