@@ -2,7 +2,27 @@
 
 from flet import *
 
+<<<<<<< HEAD
 def post_wirte_main():
+=======
+<<<<<<< HEAD
+def post_wirte_main():
+=======
+<<<<<<< HEAD
+def post_wirte_main():
+=======
+def menu1_text():
+    text = '게시글 작성'
+    return text
+
+def menu1_content():
+    # content = Container(
+    # Text("This is Tab 1"), alignment = alignment.center)
+
+    # return content
+>>>>>>> f981f4eba74a823f44575e275ef8f826b2634121
+>>>>>>> cd361d3f67c9f3a6aa401f5747a538bf056b1434
+>>>>>>> fdc43fdbe42b30d37db101fba99d4b7e29cee5de
     post_write = Container()
 
     post_tag_list = Row(controls=[])
@@ -62,6 +82,13 @@ def post_wirte_main():
         )
     post_write.content = Column(
             controls=[
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cd361d3f67c9f3a6aa401f5747a538bf056b1434
+>>>>>>> fdc43fdbe42b30d37db101fba99d4b7e29cee5de
                 Row(alignment = alignment.center, width = 480, controls=[Text("게시물 작성", size=30, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF')]), 
                 Row(alignment = alignment.center, width = 480, controls=[
                     Text("제목", text_align=TextAlign.RIGHT, width=70, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF'),
@@ -81,15 +108,63 @@ def post_wirte_main():
                 ]), 
                 Row(alignment = alignment.center, width = 480, controls=[
                     Text("태그", text_align=TextAlign.RIGHT, width=70, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF'), 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                Row(controls=[Text("게시물 작성", size=30, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF')]), 
+                Row(controls=[
+                    Text("제목", text_align=TextAlign.RIGHT, width=100, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF'), 
+                    post_title
+                ]), 
+                Row(controls=[
+                    Text("부제목", text_align=TextAlign.RIGHT, width=100, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF'), 
+                    post_sub_title
+                ]), 
+                Row(controls=[
+                    Text("설명", text_align=TextAlign.RIGHT, width=100, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF'), 
+                    post_desc
+                ]), 
+                Row(controls=[
+                    Text("카테고리", text_align=TextAlign.RIGHT, width=100, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF'), 
+                    post_radio
+                ]), 
+                Row(controls=[
+                    Text("태그", text_align=TextAlign.RIGHT, width=100, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF'), 
+>>>>>>> f981f4eba74a823f44575e275ef8f826b2634121
+>>>>>>> cd361d3f67c9f3a6aa401f5747a538bf056b1434
+>>>>>>> fdc43fdbe42b30d37db101fba99d4b7e29cee5de
                     post_tag, 
                     post_tag_list
                 ]), 
                 Row(), 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cd361d3f67c9f3a6aa401f5747a538bf056b1434
+>>>>>>> fdc43fdbe42b30d37db101fba99d4b7e29cee5de
                 Row(alignment = alignment.center, width = 480, controls=[
                     Text("마감일", text_align=TextAlign.RIGHT, width=70, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF'), 
                     post_end_title
                 ]),
                 Row(alignment = alignment.center, width = 480, controls=[Text('',width = 170),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                Row(controls=[
+                    Text("마감일", text_align=TextAlign.RIGHT, width=100, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF'), 
+                    post_end_title
+                ]),
+                Row(controls=[
+                    Text(width=250), 
+>>>>>>> f981f4eba74a823f44575e275ef8f826b2634121
+>>>>>>> cd361d3f67c9f3a6aa401f5747a538bf056b1434
+>>>>>>> fdc43fdbe42b30d37db101fba99d4b7e29cee5de
                     ElevatedButton(text="게시", bgcolor=colors.GREEN_ACCENT_700, color=colors.WHITE, 
                         on_click=lambda _: fn_post_write_post(
                             post_title.value, 
