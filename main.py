@@ -41,6 +41,7 @@ def main(page: Page):
                 "/",
                 [
                     logo,
+                    mainpage_banner(),
                     menujopports_content(),
                     page.navigation_bar,
                 ],
