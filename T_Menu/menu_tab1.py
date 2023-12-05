@@ -55,11 +55,30 @@ def post_wirte_main():
             Radio(value="4", label="라켓"), 
             Radio(value="5", label="기타"), 
         ]))
+
+    '''
+    date_picker = DatePicker(
+        on_change=change_date,
+        on_dismiss=date_picker_dismissed,
+        first_date=datetime.datetime(2023, 10, 1),
+        last_date=datetime.datetime(2024, 10, 1),
+    )
+    def change_date(e):
+        print(f"Date picker changed, value is {date_picker.value}")
+
+    def date_picker_dismissed(e):
+        print(f"Date picker dismissed, value is {date_picker.value}")
+    '''
     post_end_title = TextField(label="경기일을 입력하세요(yyyy-MM-dd)", 
             border=InputBorder.NONE,
             filled=True, 
-            width=300
+            width=300,
+            #on_focus=date_picker.pick_date()
         )
+
+    
+
+
     post_write.content = Column(
             controls=[
                 Row(alignment = alignment.center, width = 480, controls=[Text("게시물 작성", size=30, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF')]), 

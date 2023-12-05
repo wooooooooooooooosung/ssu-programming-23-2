@@ -43,3 +43,14 @@ def mainpage_banner():
             fit = ImageFit.CONTAIN)
     
     return page_banner
+
+def main_page_column():
+
+    page_column = Column(
+        controls=[
+            mainpage_banner(),
+            menujopports_content(),
+        ]
+    )
+
+    return page_column

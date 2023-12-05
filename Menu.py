@@ -6,8 +6,11 @@ from T_Menu.menu_tab4 import *
 from T_Menu.menu_tab5 import *
 from T_Menu.menu_tab6 import *
 from T_Menu.menu_tab_jopports import *
+from T_Menu.my_page import *
+from T_Menu.tag_search import *
 
 def tab_menu():
+    
     total_menu = Tabs( animation_duration = 0,
         tabs=[
         Tab(
@@ -34,4 +37,8 @@ def tab_menu():
             expand = 1
         )
 
-    return total_menu
+    total_column = Column(
+            controls=[
+                Row(alignment = alignment.center, width = 480, controls=[Text("게시물 보기", size=30, weight=FontWeight.BOLD, font_family='나눔바른고딕OTF')]),
+                total_menu])
+    return total_column

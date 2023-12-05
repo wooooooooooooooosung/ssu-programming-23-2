@@ -5,7 +5,7 @@ import os.path as path
 테이블 리스트
 type list
 '''
-tableList = [ 'user', 'ground', 'sport', 'post' ]
+tableList = [ 'user', 'ground', 'sport', 'post', 'postReservation' ]
 
 '''
 테이블 생성 쿼리
@@ -45,6 +45,13 @@ tableCreateQuery = {
     postGetCount INTEGER, 
     sID INTEGER, 
     uID INTEGER
+    )''', 
+
+    'postReservation': '''CREATE TABLE IF NOT EXISTS PostReservation(
+        pRID INTEGER PRIMARY KEY AUTOINCREMENT, 
+        pID INTEGER, 
+        uID INTEGER, 
+        isCheck INTEGER  
     )'''
 }
 
@@ -60,7 +67,9 @@ tableImportQuery = {
     'sport' : '''INSERT OR REPLACE INTO Sport(sID, sportName) 
 	VALUES(?, ?)''', 
     'post' : '''INSERT OR REPLACE INTO Post(pID, postTitle, postSubTitle, postDesc, postTag, postView, postDate, postEndDate, postGetCount, sID, uID) 
-    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', 
+    'postReservation' : '''INSERT INTO PostReservation(pRID, pID, uID, isCheck) 
+    VALUES(?, ?, ?, ?)'''
 }
 
 
@@ -92,7 +101,7 @@ def init():
     global con, cur
 
     flag = path.isfile('./db/잡포츠.db')
-    con = db.connect('./db/잡포츠.db')
+    con = db.connect('./db/잡포츠.db', check_same_thread=False)
     cur = con.cursor()
     flag = False
     # DB 없으면 생성

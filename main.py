@@ -1,11 +1,17 @@
 from flet import *
 from Menu import *
+import db
 
 
 def main(page: Page):
     page.title = "Jobports"
     page.window_width = 480
     page.window_height = 800
+    page.window_max_width = 480
+    page.window_max_height = 800
+    page.window_min_width = 480
+    page.window_min_height = 800
+
     logo = Image(
             src = f"/잡포츠.png",
             width = 160,
@@ -40,16 +46,15 @@ def main(page: Page):
         '/': View(
                 "/",
                 [
-                    logo,
-                    mainpage_banner(),
-                    menujopports_content(),
+                    tag_search(),
+                    main_page_column(),
                     page.navigation_bar,
                 ],
             ),
         '/post_write': View(
                 "/post_write",
                 [
-                    logo,
+                    tag_search(),
                     post_wirte_main(),
                     page.navigation_bar,
                 ],
@@ -57,7 +62,7 @@ def main(page: Page):
         '/post_read': View(
                 "/post_read",
                 [
-                    logo,
+                    tag_search(),
                     tab_menu(),
                     page.navigation_bar,
                 ],
@@ -65,10 +70,18 @@ def main(page: Page):
         '/my_page': View(
                 "/my_page",
                 [
-                    logo,
+                    tag_search(),
+                    my_page(),
                     page.navigation_bar,
                 ],
-            ), 
+            ),
+        '/tag_page': View(
+                "/tag_page",
+                [
+                    tag_search(),
+                    page.navigation_bar,
+                ],
+            ),
     }
 
     def route_change(route):
@@ -82,4 +95,8 @@ def main(page: Page):
     page.go(page.route)
 
 
-app(target = main, view = AppView.FLET_APP, assets_dir = "home_page")
+if __name__ == '__main__':
+    db.init()
+    app(target = main, view = AppView.FLET_APP, assets_dir = "home_page")
+
+

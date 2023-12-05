@@ -2,7 +2,7 @@ import db
 from flet import *
 
 def menu6_text():
-    text = '기타'
+    text = ' 기타 '
     return text
 
 def menu6_content():
