@@ -107,7 +107,7 @@ def init():
     flag = path.isfile('./db/잡포츠.db')
     con = db.connect('./db/잡포츠.db')
     cur = con.cursor()
-    flag = False
+    
     # DB 없으면 생성
     if flag == False :
         for _ in tableList :
@@ -140,3 +140,16 @@ def executeQuery(query) :
 def executeUpdate(query) :
     cur.execute(query)
     con.commit()
+
+
+'''
+# 쿼리문 실행
+파라미터 : query sqlite3 query
+파라미터 : param list 형태의 파라미터
+내용 : return 값이 없는 쿼리
+작성 : 2023-10-19
+변경 : 2023-10-19
+'''
+def executeUpdate(query, param):
+   cur.execute(query, param)
+   con.commit()
