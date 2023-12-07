@@ -1,6 +1,13 @@
 import db
 from flet import *
 
+'''
+db.executeUpdate(
+        'INSERT INTO Post(postTitle, postSubTitle, postDesc, postTag, postView, postDate, postEndDate, postDeadline, sID, uID) VALUES(?, ?, ?, ?, 0, datetime(\'now\',\'localtime\'), ?, ?, ?, 1)',
+        ['asd', 'asd', 'asd', 'asd', '2023-11-11 17:00', 2, 1 ]
+    )
+'''
+
 def main(page: Page):
 
     # 게시물 작성 뷰
