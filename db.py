@@ -71,8 +71,8 @@ tableImportQuery = {
 	VALUES(?, ?)''', 
     'post' : '''INSERT INTO Post(pID, postTitle, postSubTitle, postDesc, postTag, postView, postDate, postEndDate, postDeadline, sID, uID) 
     VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', 
-    'postReservation': '''INSERT INTO PostReservation(pRID, isPostCheck, isUserCheck, pID, uID)
-    VALUES(?, ?, ?, ?, ?)
+    'postReservation': '''INSERT INTO PostReservation(pRID, isPostCheck, isUserCheck, playScore, playDesc, pID, uID)
+    VALUES(?, ?, ?, ?, ?, ?, ?)
     '''
 }
 
@@ -108,7 +108,7 @@ def init():
     con = db.connect('./db/잡포츠.db')
     cur = con.cursor()
     
-    # DB 없으면 생성
+    # DB 첫 생성이면 기본 데이터 insert
     if flag == False :
         for _ in tableList :
             cur.execute(tableCreateQuery[str(_)])
