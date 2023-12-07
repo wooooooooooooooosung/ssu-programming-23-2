@@ -5,7 +5,7 @@ import os.path as path
 테이블 리스트
 type list
 '''
-tableList = [ 'user', 'ground', 'sport', 'post' ]
+tableList = [ 'user', 'ground', 'sport', 'post', 'postReservation' ]
 
 '''
 테이블 생성 쿼리
@@ -42,8 +42,18 @@ tableCreateQuery = {
     postView INTEGER, 
     postDate DATETIME, 
     postEndDate DATETIME, 
-    postGetCount INTEGER, 
+    postDeadline INTEGER, 
     sID INTEGER, 
+    uID INTEGER
+    )''',
+
+    'postReservation': '''CREATE TABLE IF NOT EXISTS PostReservation(
+    pRID INTEGER PRIMARY KEY AUTOINCREMENT,
+    isPostCheck INTEGER,
+    isUserCheck INTEGER,
+    playScore INTEGER, 
+    playDesc TEXT,
+    pID INTEGER,
     uID INTEGER
     )'''
 }
@@ -59,8 +69,11 @@ tableImportQuery = {
 	VALUES(?, ?, ?, ?, ?)''', 
     'sport' : '''INSERT INTO Sport(sID, sportName) 
 	VALUES(?, ?)''', 
-    'post' : '''INSERT INTO Post(pID, postTitle, postSubTitle, postDesc, postTag, postView, postDate, postEndDate, postGetCount, sID, uID) 
-    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'''
+    'post' : '''INSERT INTO Post(pID, postTitle, postSubTitle, postDesc, postTag, postView, postDate, postEndDate, postDeadline, sID, uID) 
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''', 
+    'postReservation': '''INSERT INTO PostReservation(pRID, isPostCheck, isUserCheck, pID, uID)
+    VALUES(?, ?, ?, ?, ?)
+    '''
 }
 
 
