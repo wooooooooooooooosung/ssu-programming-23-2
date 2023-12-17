@@ -105,7 +105,7 @@ def init():
     global con, cur
 
     flag = path.isfile('./db/잡포츠.db')
-    con = db.connect('./db/잡포츠.db')
+    con = db.connect('./db/잡포츠.db', check_same_thread=False)
     cur = con.cursor()
     
     # DB 첫 생성이면 기본 데이터 insert
@@ -153,3 +153,8 @@ def executeUpdate(query) :
 def executeUpdate(query, param):
    cur.execute(query, param)
    con.commit()
+
+
+def executeUpdateSingle(query) :
+    cur.execute(query)
+    con.commit()
