@@ -7,3 +7,8 @@ init
 pip install sqlite
 pip install flet
 ```
+
+Run
+```py
+python main.py
+```
